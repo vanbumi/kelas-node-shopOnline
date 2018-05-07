@@ -18,14 +18,16 @@ var app = express();
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('viewn engine', 'ejs');
+app.set('view engine', 'ejs');
 
 // Set public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Home / index
 app.get('/', function(req, res){
-  res.send("It's work!")
+  res.render("index", {
+    title : 'Home'
+  })
 });
 
 // Setup server
