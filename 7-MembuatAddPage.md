@@ -51,13 +51,13 @@ Membuat form:
       </div>
 
       <div class="form-group">
-        <label for="">Title</label>
+        <label for="">Slug</label>
         <input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Slug">
       </div>
 
       <div class="form-group">
         <label for="">Content</label>
-        <textarea class="form-control" name="content" cols="30" rows"10" value="<%= content %>" placeholder="Content">
+        <textarea class="form-control" name="content" cols="30" rows"10" placeholder="Content"><%= content %></textarea>
       </div>
 
       <button class="btn btn-primary">Submit</button>
@@ -66,12 +66,25 @@ Membuat form:
 
 Coba view di browser localhost:3000/admin/pages/add-page
 
+Apabila ada error untuk sementara waktu kita remove dulu call back messages pada header.ejs dan adminheader.ejs dibawah ini :
+
+	<% messages('messages', locals) %>
+
 Update Navbar :
 
 **Pada file adminheader** :
 
-* Navbar brand.
-* Link Pages
+Ganti Navbar brand menjadi "MedioShop" (beri nama sesuai dengan keinginan anda)
+
+	<a class="navbar-brand" href="/" target="_blank">MedioShop</a>
+
+Rubah Link Pages
+
+	<li>
+		<a class="nav-link" href="/admin/pages">Pages <span class="sr-only">(current)</span></a>
+	</li>
+
+Kemudian cek link nya apakah berjalan sesuai.
 
 **Pada file adminfooter**
 
@@ -79,7 +92,7 @@ Tambahkan copyright:
 
     <br><br><br>
     <hr>
-    <p class="text-center">&copy MedioShop</p> 
+    <p class="text-center">&copy; MedioShop</p> 
 
 
 

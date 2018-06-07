@@ -3,7 +3,7 @@ var moongose = require('monggose');
 // Page Schema
 var PageSchema = mongoose.Schema({
   title: {
-    String,
+    type: String,
     require: true
   },
   slug: {

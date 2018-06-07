@@ -92,7 +92,7 @@ Install **Connect flash** juga.
 
     ...
 
-**Setup express validator middleware**
+**Setup express Messages middleware**
 
     app.use(require('connect-flash')());
     app.use(function (req, res, next) {

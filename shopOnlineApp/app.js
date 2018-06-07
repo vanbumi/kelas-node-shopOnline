@@ -36,9 +36,9 @@ app.use('/admin/pages', adminPages);
 
 // Setup body parser middleware
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // Setup express session middleware
 app.use(session({
