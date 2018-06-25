@@ -6,8 +6,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var expressValidator = require('express-validator');
 
+// Connect to db
 mongoose.connect(config.database);
-
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -25,14 +25,6 @@ app.set('view engine', 'ejs');
 
 // Set public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
-// set routes index
-var pages = require('./routes/pages.js');
-app.use('/', pages);
-
-// set routes admin area
-var adminPages = require('./routes/admin_pages.js');
-app.use('/admin/pages', adminPages);
 
 // Setup body parser middleware
 // parse application/x-www-form-urlencoded
@@ -77,10 +69,18 @@ app.use(function (req, res, next) {
 
 
 
+// set routes index
+var pages = require('./routes/pages.js');
+var adminPages = require('./routes/admin_pages.js');
+app.use('/admin/pages', adminPages);
+
+app.use('/', pages);
+
+
+
 
 // Setup server
 var port = 3000;
-
 app.listen(port, function(){
   console.log("Server running on port " + port)
 });
