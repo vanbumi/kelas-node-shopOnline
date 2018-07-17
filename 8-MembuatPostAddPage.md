@@ -27,7 +27,7 @@ Buka file routes/admin_page.js, tambahkan kode dibawah ini :
 				content: content
 			});
 		} else {
-			console.log('Success');
+			console.log('success');
 		}
 		
 	});
@@ -35,9 +35,9 @@ Buka file routes/admin_page.js, tambahkan kode dibawah ini :
 Selanjutnya kita ingin "error messages" muncul di adminheader.ejs, tambahkan code dibawah ini pada file adminheader.ejs :
 
 	<% if (errors) { %>
-		<% errors.forEach(function(errors) { %>
+		<% errors.forEach(function(error) { %>
 			<div class="alert alert-danger">
-				<%= errors.msg %>
+				<%= error.msg %>
 			</div>
 		<% }); %>
 	<% } %>	

@@ -43,26 +43,26 @@ Buat title dan link:
 
 Membuat form:
 
-    <form action="/admin/pages/add-page">
-    
-      <div class="form-group">
-        <label for="">Title</label>
-        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
-      </div>
+    <form method="POST" action="/admin/pages/add-page">
 
-      <div class="form-group">
-        <label for="">Slug</label>
-        <input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Slug">
-      </div>
+			<div class="form-group">
+				<label for="">Title</label>
+				<input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
+			</div>
 
-      <div class="form-group">
-        <label for="">Content</label>
-        <textarea class="form-control" name="content" cols="30" rows"10" placeholder="Content"><%= content %></textarea>
-      </div>
+			<div class="form-group">
+				<label for="">Slug</label>
+				<input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Slug">
+			</div>
 
-      <button class="btn btn-primary">Submit</button>
+			<div class="form-group">
+				<label for="">Content</label>
+				<textarea class="form-control" name="content" cols="30" rows="10" placeholder="Content"><%= content %></textarea>
+			</div>
 
-    </form>
+			<button class="btn btn-primary">Submit</button>
+
+		</form>
 
 Coba view di browser localhost:3000/admin/pages/add-page
 
