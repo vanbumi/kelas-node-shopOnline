@@ -2,7 +2,7 @@
 
 ### #Mediosoft Learning
 
-## 2. Koneksi ke Mongodb Database
+## #2 Koneksi ke Mongodb Database
 
 #### Install Mongoose
 

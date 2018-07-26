@@ -2,7 +2,7 @@
 
 ### Mediosoft Learning
 
-## Membuat Page Model
+## #6 Membuat Page Model
 
 Pada folder "models" buat file baru beri nama "page.js", kemudian tambahkan baris kode sbb :
 

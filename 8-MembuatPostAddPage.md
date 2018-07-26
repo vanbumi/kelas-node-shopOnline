@@ -2,7 +2,7 @@
 
 ### Mediosoft Learning
 
-## Membuat Method POST "Add Page"
+## #8 Membuat Method POST "Add Page"
 
 Buka file routes/admin_page.js, tambahkan kode dibawah ini :
 

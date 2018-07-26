@@ -1,12 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var Page = require('../models/page');
 
 // export
 module.exports = router;
 
-// Home / index
+// Home / index Admin
 router.get('/', function(req, res){
-  res.send('Admin Area');
+  // mengambil data dari database
+  Page.find({}).sort({sorting: 1}).exec(function(err, pages) {
+    res.render('admin/pages', {
+      pages: pages
+    });
+  });
 });
 
 // Membuat add page dengan method GET
@@ -45,7 +51,31 @@ router.post('/add-page', function(req, res) {
       content: content
     });
   } else {
-    console.log('Success')
+    Page.findOne({slug: slug}, function(err, page) {
+      if (page) {
+        req.flash('danger', 'Page slug is exist, choose another slug');
+        res.render('admin/add_page', {
+          title: title,
+          slug: slug,
+          content: content
+        });
+      } else {
+        var page = new Page({
+          title: title,
+          slug: slug,
+          content: content,
+          sorting: 100
+        });
+
+        page.save(function (err) {
+          if (err)
+            return console.log(err);
+
+          req.flash('success', 'Page added!');
+          res.redirect('/admin/pages')
+        });
+      }
+    });
   }
 
 });

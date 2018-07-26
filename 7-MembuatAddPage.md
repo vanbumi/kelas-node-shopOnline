@@ -2,7 +2,7 @@
 
 ### Mediosoft Learning
 
-## Membuat Halaman "Add Page"
+## #7 Membuat Halaman "Add Page"
 
 Pada halaman Admin Area kita akan menambahkan fasilitas "Add Page", yaitu halaman untuk menambahkan halaman baru pada web aplikasi yang kita buat.
 
