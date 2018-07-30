@@ -53,17 +53,18 @@ Dan paste pada sisi bawah halaman pages.ejs:
 
 Tambahkan script letakkan dibawah link CDN jquery seperti dibawah ini:
 
-	$('tbody').sortable({
-		
-		items: "tr:not('home')",
-		placeholder: "ui-state-highlight",
-		update: function () {
-			var ids = $('tbody').sortable("serialize");
-			var url = "/admin/pages/reorder-pages";
-			
-			$.post(url, ids);
-		}
-	});
+	  $('tbody').sortable({
+
+        items: "tr:not('.home')",
+        placeholder: "ui-state-hightlight",
+        update: function () {
+            var ids = $('tbody').sortable("serialize");
+            var url = "/admin/pages/reorder-pages";
+            
+            $.post(url, ids);
+        }
+
+    });
 
 refresh pada browser localhost:3000/admin/pages dan test.
 
@@ -84,15 +85,15 @@ Tambahkan kode berikut pada routes/admin_pages.js:
 			var id = ids[1];
 			count++;
 			
-		(function(count) {
-			Page.findById(id, function (err, page) {
-				page.sorting = count;
-				page.save(function(err) {
-					if (err)
-						return console.log(err)
+			(function(count) {
+				Page.findById(id, function (err, page) {
+					page.sorting = count;
+					page.save(function(err) {
+						if (err)
+							return console.log(err)
+					});
 				});
-			});
-		}) (count);
+			}) (count);
 		
 		}
 	});
