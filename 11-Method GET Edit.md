@@ -15,7 +15,7 @@ Membuat routes get edit:
 	/* GET edit page */
 	router.get('/edit-page/:slug', function(req, res) {
 		
-		Page.findOnde({slug: req.params.slug}, function(err, page) {
+		Page.findOne({slug: req.params.slug}, function(err, page) {
 			if (err)
 				return console.log(err);
 				

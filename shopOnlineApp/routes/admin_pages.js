@@ -102,7 +102,82 @@ router.post('/reorder-pages', function(req, res) {
         });
       });
     })(count);
-
-    
   }
 });
+
+// GET edit page
+
+router.get('/edit-page/:slug', function(req, res) {
+
+  Page.findOne({slug: req.params.slug}, function(err, page) {
+    if (err)
+      return console.log(err);
+
+    res.render('admin/edit_page', {
+      title: page.title,
+      slug: page.slug,
+      content: page.content,
+      id: page._id
+    });  
+  });
+});
+
+// Membuat method POST pada edit page
+router.post('/edit-page/:slug', function(req, res) {
+
+  req.checkBody('title', 'Title must have a value').notEmpty();
+  req.checkBody('content', 'Content must have a value').notEmpty();
+
+  var title = req.body.title;
+  var slug = req.body.slug.replace(/\s+/g, '-').toLowerCase();
+  if (slug == '') slug = title.replace(/\s+/g, '-').toLowerCase();
+  
+  var content = req.body.content;
+  var id = req.body.id;
+
+  var errors = req.validationErrors();
+
+  if (errors) {
+    res.render('admin/edit_page', {
+      errors: errors,
+      title: title,
+      slug: slug,
+      content: content,
+      id: id
+    });
+  } else {
+    Page.findOne({slug: slug, _id:{'$ne':id}}, function(err, page) {
+      
+      if (page) {
+        req.flash('danger', 'Page slug is exist, choose another slug');
+        res.render('admin/edit_page', {
+          title: title,
+          slug: slug,
+          content: content,
+          id: id
+        });
+      } else {
+        Page.findById(id, function (err, page) {
+          if (err) 
+            return console.log(err);
+
+            page.title = title;
+            page.slug = slug;
+            page.content = content;
+
+            page.save(function (err) {
+              if (err)
+                return console.log(err);
+    
+              req.flash('success', 'Page has been update!');
+              res.redirect('/admin/pages/edit-page/'+page.slug);
+            });
+
+        });
+
+      }
+    });
+  }
+});
+
+

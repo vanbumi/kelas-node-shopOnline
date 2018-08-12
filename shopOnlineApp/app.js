@@ -38,9 +38,9 @@ app.use(bodyParser.json());
 // Setup express session middleware
 app.use(session({
   secret: 'keyboard cat',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
-  cookie: { secure: true }
+  //cookie: { secure: true }
 }))
 
 // Setup express validator middleware
