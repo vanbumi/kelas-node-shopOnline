@@ -2,9 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Page = require('../models/page');
 
-// export
-module.exports = router;
-
 // Home / index Admin
 router.get('/', function(req, res){
   // mengambil data dari database
@@ -180,4 +177,17 @@ router.post('/edit-page/:slug', function(req, res) {
   }
 });
 
+// GET delete page
+router.get('/delete-pages/:id', function (req, res) {
+  Page.findByIdAndRemove(req.params.id, function (err) {
+      if (err)
+          return console.log(err);
+
+      req.flash('success', 'Page deleted!');
+      res.redirect('/admin/pages/');
+  });
+});
+
+// export
+module.exports = router;
 

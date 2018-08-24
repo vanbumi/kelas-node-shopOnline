@@ -4,7 +4,7 @@
 
 ### #13 Install Text Editor & Delete page.
 
-Pada materi kali ini kita akan akan menambahkan tex editor di admin area dan enable fungsionanliti button delete page.
+Pada materi kali ini kita akan menambahkan tex editor di admin area dan mengaktifkan fungsi button delete page.
 
 #### Wysiwig text editor
 
@@ -56,11 +56,11 @@ kemudian cek di localhost:3000/admin/pages/add-page & localhost:3000/admin/pages
 
 Tambahkan method GET pada file admin_pages.js:
 
-	// GET edit page
+	// GET delete page
 
 	router.get('/delete-page/:id', function(req, res) {
 
-		Page.findById(req.params, function(err) {
+		Page.findById(req.params.id, function(err) {
 			
 				if (err)
 					return console.log(err);
