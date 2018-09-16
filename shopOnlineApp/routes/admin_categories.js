@@ -2,16 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 // Get Category model.
-var Page = require('../models/page');
+var Page = require('../models/category');
 
 // Get pages index
 router.get('/', function(req, res){
+
+  res.send('Welcome to Category Index')
+
   // mengambil data dari database
-  Page.find({}).sort({sorting: 1}).exec(function(err, pages) {
-    res.render('admin/pages', {
-      pages: pages
-    });
-  });
+  // Page.find({}).sort({sorting: 1}).exec(function(err, pages) {
+  //   res.render('admin/pages', {
+  //     pages: pages
+  //   });
+  // });
 });
 
 // Membuat add page dengan method GET

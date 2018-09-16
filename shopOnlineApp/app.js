@@ -72,12 +72,15 @@ app.use(function (req, res, next) {
 
 
 
-// set routes index
+// set routes 
 var pages = require('./routes/pages.js');
 var adminPages = require('./routes/admin_pages.js');
-app.use('/admin/pages', adminPages);
+var adminCategories = require('./routes/admin_categories.js');
 
+// setup links
+app.use('/admin/pages', adminPages);
 app.use('/', pages);
+app.use('/admin/categories', adminCategories);
 
 
 
