@@ -79,8 +79,9 @@ var adminCategories = require('./routes/admin_categories.js');
 
 // setup links
 app.use('/admin/pages', adminPages);
-app.use('/', pages);
 app.use('/admin/categories', adminCategories);
+app.use('/', pages);
+
 
 
 
