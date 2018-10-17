@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### #Mediosoft Learning
+---
 
-## #2 Koneksi ke Mongodb Database
+## NodeJS Project Shop Online
+
+### #2 Koneksi ke Mongodb Database
 
 #### Install Mongoose
 

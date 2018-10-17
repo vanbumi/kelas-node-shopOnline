@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
 
-## #6 Membuat Page Model
+## NodeJS Project Shop Online
+
+### #6 Membuat Page Model
 
 Pada folder "models" buat file baru beri nama "page.js", kemudian tambahkan baris kode sbb :
 

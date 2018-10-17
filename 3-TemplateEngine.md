@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### #Mediosoft Learning
+---
 
-## #3 Template Engine
+## NodeJS Project Shop Online
+
+### #3 Template Engine
 
 ### Template EJS
 

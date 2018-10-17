@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
 
-## #8 Membuat Method POST "Add Page"
+## NodeJS Project Shop Online
+
+### #8 Membuat Method POST "Add Page"
 
 Buka file routes/admin_page.js, tambahkan kode dibawah ini :
 

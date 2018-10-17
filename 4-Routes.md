@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
 
-## #4 Routes
+## NodeJS Project Shop Online
+
+### #4 Routes
 
 Pada materi ini kita akan belajar cara setup routes pada NodeJS, sebelumnya kita membuat routes untuk halaman index pada file app.js, untuk membuat website lebih scalable & organize, kita harus memisahkan routing dengan halaman sendiri.
 

@@ -1,6 +1,8 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
+
+## NodeJS Project Shop Online
 
 ## #7 Membuat Halaman "Add Page"
 

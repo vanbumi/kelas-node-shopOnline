@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
 
-## #9 Membuat Admin Page Index
+## NodeJS Project Shop Online
+
+### #9 Membuat Admin Page Index
 
 (Membuat halaman index untuk Halaman Admin)
 

@@ -1,8 +1,10 @@
-# NodeJS Project Shop Online
+#### MedioCademy Bootcamp Specialist.
 
-### Mediosoft Learning
+---
 
-## #5 Install Package & Middleware
+## NodeJS Project Shop Online
+
+### #5 Install Package & Middleware
 
 ### Install body-parser
 
