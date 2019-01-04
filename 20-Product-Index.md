@@ -6,7 +6,7 @@
 
 ### #20 Product index Page
 
-Buka file admin_products.js dan update code nya seperti dibawah ini:
+Buka file routes/admin_products.js dan update code nya seperti dibawah ini:
 
 	var express = require('express');
 	var router = express.Router();

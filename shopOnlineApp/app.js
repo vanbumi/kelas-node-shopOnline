@@ -12,7 +12,7 @@ mongoose.connect(config.database);
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
+db.once("open", function () {
   // we're connected!
   console.log("Conected to database");
 });
@@ -52,7 +52,7 @@ app.use(
 // Setup express validator middleware
 app.use(
   expressValidator({
-    errorFormatter: function(param, msg, value) {
+    errorFormatter: function (param, msg, value) {
       var namespace = param.split("."),
         root = namespace.shift(),
         formParam = root;
@@ -71,7 +71,7 @@ app.use(
 
 // Setup express messages middleware
 app.use(require("connect-flash")());
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.messages = require("express-messages")(req, res);
   next();
 });
@@ -85,10 +85,11 @@ var adminProducts = require("./routes/admin_products.js");
 // setup links
 app.use("/admin/pages", adminPages);
 app.use("/admin/categories", adminCategories);
+app.use('/admin/products', adminProducts);
 app.use("/", pages);
 
 // Setup server
 var port = 3000;
-app.listen(port, function() {
+app.listen(port, function () {
   console.log("Server running on port " + port);
 });

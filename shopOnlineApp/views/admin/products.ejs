@@ -1,0 +1,59 @@
+<%- include('../_layouts/adminheader') %>
+
+<br><br>
+
+<% if (count > 0) { %>
+
+<h2 class="page-title">Products </h2>
+<a href="/admin/products/add-product" class="btn btn-primary">Add new Product</a>
+<br><br>
+
+<table class="table table-striped alignmiddle">
+  <thead>
+    <tr class="home">
+      <th>Product</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Product Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- do looping -->
+    <% products.forEach(function (product) { %>
+    <tr id="id_<%= product._id %>" class="<%= product.slug %>">
+      <td>
+        <%= product.title %>
+      </td>
+      <td>
+        <%= parseFloat(product.price).toFixed(2) %>
+      </td>
+      <td>
+        <%= product.category %>
+      </td>
+      <td>
+        <% if (product.image == ""){ %>
+        <img id="noimage" src="/images/noimage.png" alt="">
+        <% } else { %>
+        <img src="/product_images/<%= product._id %>/<%= product.image %>" alt="product-image">
+        <% } %>
+      </td>
+      <td>
+        <a href="/admin/products/edit-product/<%= product._id %>">Edit</a>
+      </td>
+      <td>
+        <a class="confirmDeletion" href="/admin/products/delete-product/<%= product._id %>">Delete</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<% } else { %>
+
+<h3 class="text-center">There are no products available</h3>
+
+<% } %>
+
+<%- include('../_layouts/adminfooter') %>
