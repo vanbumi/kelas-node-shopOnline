@@ -26,17 +26,21 @@ router.get("/", function (req, res) {
   });
 });
 
-// Membuat add page dengan method GET
-router.get("/add-page", function (req, res) {
+// Membuat GET add product
+router.get("/add-product", function (req, res) {
   var title = "";
-  var slug = "";
-  var content = "";
+  var desc = "";
+  var price = "";
 
-  res.render("admin/add_page", {
-    title: title,
-    slug: slug,
-    content: content
+  Category.find(function (err, categories) {
+    res.render("admin/add_product", {
+      title: title,
+      desc: desc,
+      categories: categories,
+      price: price
+    });
   });
+
 });
 
 // Membuat method POST pada add page
