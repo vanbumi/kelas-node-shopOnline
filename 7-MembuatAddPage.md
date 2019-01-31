@@ -71,6 +71,8 @@ Coba view di browser localhost:3000/admin/pages/add-page
 Apabila ada error untuk sementara waktu kita remove dulu call back messages pada header.ejs dan adminheader.ejs dibawah ini :
 
 	<% messages('messages', locals) %>
+	
+> *Error biasa nya pada urutan baris code pada app.js	
 
 Update Navbar :
 
