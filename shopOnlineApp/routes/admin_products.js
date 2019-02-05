@@ -93,35 +93,34 @@ router.post("/add-product", function (req, res) {
           category: category,
           image: imageFile
         });
+
         product.save(function (err) {
           if (err)
             return console.log(err);
 
-          // setelah tersimpan
-          mkdirp('public/product_images' + product._id, function (err) {
+          mkdirp('public/product_images/' + product._id, function (err) {
             return console.log(err);
           });
 
-          mkdirp('public/product_images' + product._id + '/gallery', function (err) {
+          mkdirp('public/product_images/' + product._id + '/gallery', function (err) {
             return console.log(err);
           });
 
-          mkdirp('public/product_images' + product._id + '/gallery/thumbs', function (err) {
+          mkdirp('public/product_images/' + product._id + '/gallery/thumbs', function (err) {
             return console.log(err);
           });
 
           if (imageFile != "") {
             var productImage = req.files.image;
-            var path = 'public/product_images' + product._id + '/' + imageFile;
+            var path = 'public/product_images/' + product._id + '/' + imageFile;
 
             productImage.mv(path, function (err) {
-              return console.log(err)
+              return console.log(err);
             });
           }
 
-          req.flash('success', 'Product telah ditambahkan');
+          req.flash('success', 'Product added!');
           res.redirect('/admin/products');
-
         });
       }
     });
