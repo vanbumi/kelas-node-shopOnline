@@ -20,7 +20,7 @@ Kemudian require it :
 	
 Connecte syntax :
 
-	mongoose.connect('mongodb://localhost/shoponline');
+	mongoose.connect('mongodb://localhost/olshop', { useNewUrlParser: true });
 	
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
@@ -54,7 +54,7 @@ Update :
 	
 Menjadi :	
 
-	mongoose.connect(config.database);
+	mongoose.connect(config.database, { useNewUrlParser: true });
 
 Cek koneksi di terminal (seharus nya restart otomatis karena menggunakan "nodemon"). Jika belum yakin Control + C untuk menonaktifkan server dan aktifkan kembali dengan nodemon app.js.
 
