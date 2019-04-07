@@ -102,7 +102,7 @@ Buka kembali halaman **admin_products.js** dan buatlah baris kode dibagian bawah
 
 <br>
 
-next video "Edit Product View"
+next video "25 Edit Product View"
 
 <br><br><br><br>
 
