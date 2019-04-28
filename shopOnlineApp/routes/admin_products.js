@@ -127,56 +127,6 @@ router.post("/add-product", function (req, res) {
   }
 });
 
-// GET Edit Product
-
-router.get('/edit-product/:id', function (req, res) {
-
-  var errors;
-
-  if (req.session.errors) errors = req.session.errors;
-
-  req.session.errors = null;
-
-  Category.find(function (err, categories) {
-
-    Product.findById(req.parames.id, function (err, p) {
-
-      if (err) {
-        console.log(err);
-        res.redirect('/admin/products');
-      } else {
-        var galleryDir = 'public/product_images' + p._id + '/gallery';
-
-        var galleryImages = null;
-
-        fs.readdir(galleryDir, function (err, files) {
-
-          if (err) {
-            console.log(err);
-          } else {
-            galleryImages = files;
-
-            res.render('admin/edit_product', {
-
-              title: p.title,
-              errors: errors,
-              desc: p.desc,
-              categories: categories,
-              category: p.category.replace(/\s/g, '-').toLowerCase(),
-              price: p.price,
-              image: p.image,
-              galleryImages: galleryImages
-
-            });
-          }
-        });
-      }
-    });
-
-  });
-
-});
-
 
 
 
