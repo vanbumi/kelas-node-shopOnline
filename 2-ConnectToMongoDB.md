@@ -13,14 +13,14 @@ Google for "mongoose" dan klik "quick start guide".
 Install mongoose :
 
 	npm install --save mongoose
-	
+
 Kemudian require it :
 
 	var mongoose = require('mongoose');
-	
+
 Connecte syntax :
 
-	mongoose.connect('mongodb://localhost/shoponline');
+	mongoose.connect('mongodb://localhost/shoponline', { useNewUrlParser: true });
 	
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
@@ -28,11 +28,11 @@ Connecte syntax :
 		// we're connected!
 		console.log('Connected to MongoDB')
 	});
-	
+
 Sekarang jalankan server :
 
 	nodemon app.js
-	
+
 #### Membuat folder dan file baru untuk configurasi database :
 
 * Buat folder beri nama "config"
@@ -47,17 +47,16 @@ Update file database.js :
 Kemudian require file config :
 
 	var config = require('./config/database');
-	
+
 Update :	
 
 	mongoose.connect('mongodb://localhost/shoponline');
-	
+
 Menjadi :	
 
 	mongoose.connect(config.database);
 
 Cek koneksi di terminal (seharus nya restart otomatis karena menggunakan "nodemon"). Jika belum yakin Control + C untuk menonaktifkan server dan aktifkan kembali dengan nodemon app.js.
-
 
 
 
