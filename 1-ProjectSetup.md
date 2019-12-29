@@ -16,7 +16,7 @@ Bukalah terminal anda dan cd ke folder project diatas & npm init:
 	npm init
 	
 	// Isian entry point anda bisa isi dengan server.js atau app.js, untuk kepentingan project ini saya menggunakan "app.js".
-	
+
 Bukalah Editor favorit anda (saya menggunakan Visual Studio Code).	
 
 Anda buka folder project diatas dan package.json sudah terinstal disana pada saat kita melakukan "npm init".
@@ -52,7 +52,7 @@ Klik tombol "CREATE DATABASE" dan buat database baru :
 
 	Database name 	: shoponline
 	Collection Name : pages
-	
+
 #### Install express & ejs
 
 Pada terminal anda install package library sbb:
@@ -75,34 +75,50 @@ Kembali ke Text Editor anda dan buat file baru beri nama "app.js" dan buat boile
 	
 	// Set public folder
 	app.use(express.static(path.join(__dirname, 'public')));
-	
+
+
+
+#### Setup server
+
+```
+var port = 3000;
+app.listen(port, function() {
+	console.log("Server running on port " + port);
+});
+```
+
+#### 
+
+#### Setup home index
+
+```
+app.get('/', function(req, res) {
+	res.send("It's Work!")
+});
+```
+
+/> Jalankan server dengan perintah: ```node app.js```
+
+/> Coba buka localhost:3000, akan muncul text diatas.
+
+
+
 #### Membuat folder Views, Models, Public & Routes
 
 Pada root buatlah 4 buah folder baru beri nama "views", "models", "public" dan "routes"
 	
-#### Setup server
-
-	var port = 3000;
-	app.listen(port, function() {
-		console.log("Server running on port " + port);
-	});
-	
-#### Setup home index
-
-	app.get('/', function(req, res) {
-		res.send("It's Work!")
-	});
-
 #### Install nodemon (bagi yang belum)
 
-	npm install -g nodemon
-	
+```npm i nodemon -g```
+
+
+
 #### Start Server
 
 	nodemon app.js
-	
-	
 
+
+​	
 
 
 
